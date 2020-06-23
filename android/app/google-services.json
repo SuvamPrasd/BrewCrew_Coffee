@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "377363226136",
+    "firebase_url": "https://brewapp-f9dff.firebaseio.com",
+    "project_id": "brewapp-f9dff",
+    "storage_bucket": "brewapp-f9dff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377363226136:android:26712bc62ef4e93edf6d6d",
+        "android_client_info": {
+          "package_name": "com.example.brewapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377363226136-me6kq4d72ddtfvfl675vg33gvv0jvmr6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD82DCeFwyTQHNLfZ-2DuxV9Pz4TQjMPUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377363226136-me6kq4d72ddtfvfl675vg33gvv0jvmr6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
