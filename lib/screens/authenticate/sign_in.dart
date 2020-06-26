@@ -10,10 +10,12 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
 
   //textfield state
   String email = '';
   String password = '';
+  String error = '';
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +37,17 @@ class _SignInState extends State<SignIn> {
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Form(
+          key: _formKey,
           child: Column(
             children: <Widget>[
               SizedBox(height: 20.0),
               TextFormField(
+                validator: (value) {
+                  if (value.isEmpty || !value.contains('@')) {
+                    return 'Enter correct email address';
+                  }
+                  return null;
+                },
                 onChanged: (value) {
                   setState(() {
                     email = value;
@@ -47,6 +56,12 @@ class _SignInState extends State<SignIn> {
               ),
               SizedBox(height: 20.0),
               TextFormField(
+                validator: (value) {
+                  if (value.length < 6) {
+                    return 'Password should be atleast 7 characters long.';
+                  }
+                  return null;
+                },
                 obscureText: true,
                 onChanged: (value) {
                   setState(() {
@@ -62,9 +77,24 @@ class _SignInState extends State<SignIn> {
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () async {
-                  print(email);
-                  print(password);
+                  if (_formKey.currentState.validate()) {
+                    dynamic result =
+                        await _auth.signInWithEmailPassword(email, password);
+                    if (result == null) {
+                      setState(() {
+                        error = 'Could not sign in with those credentials';
+                      });
+                    }
+                  }
                 },
+              ),
+              SizedBox(height: 12.0),
+              Text(
+                error,
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 14,
+                ),
               ),
             ],
           ),
