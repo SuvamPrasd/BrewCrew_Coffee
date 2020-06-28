@@ -11,6 +11,11 @@ class BrewTile extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 8.0),
       child: Card(
+        elevation: 15.0,
+        shape: BeveledRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        shadowColor: Colors.white,
         margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0),
         child: ListTile(
           leading: CircleAvatar(

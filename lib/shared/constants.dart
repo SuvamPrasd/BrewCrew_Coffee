@@ -20,6 +20,7 @@ const textInputDecoration = InputDecoration(
 
 const decorationImage = BoxDecoration(
   image: DecorationImage(
+    colorFilter: ColorFilter.mode(Colors.black, BlendMode.color),
     image: AssetImage('assets/login.jpg'),
     fit: BoxFit.cover,
   ),
