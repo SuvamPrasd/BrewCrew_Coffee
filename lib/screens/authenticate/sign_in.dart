@@ -25,21 +25,29 @@ class _SignInState extends State<SignIn> {
     return loading
         ? LoadingSpinner()
         : Scaffold(
-            backgroundColor: Colors.brown[100],
             appBar: AppBar(
-              backgroundColor: Colors.brown[400],
+              backgroundColor: Colors.brown[900],
               elevation: 0.0,
-              title: Text('Sign In To Brew Crew'),
+              title: Text('Sign In'),
               actions: <Widget>[
                 FlatButton.icon(
                     onPressed: () {
                       widget.toggleView();
                     },
-                    icon: Icon(Icons.person),
-                    label: Text('Register'))
+                    icon: Icon(
+                      Icons.person,
+                      color: Colors.white,
+                    ),
+                    label: Text(
+                      'Register',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ))
               ],
             ),
             body: Container(
+              decoration: decorationImage,
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
               child: Form(
                 key: _formKey,

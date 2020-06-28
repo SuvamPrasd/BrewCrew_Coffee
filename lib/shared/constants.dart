@@ -17,3 +17,10 @@ const textInputDecoration = InputDecoration(
   ),
   fillColor: Colors.white,
 );
+
+const decorationImage = BoxDecoration(
+  image: DecorationImage(
+    image: AssetImage('assets/login.jpg'),
+    fit: BoxFit.cover,
+  ),
+);
